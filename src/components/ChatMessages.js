@@ -10,14 +10,8 @@ function ChatMessages(props) {
 
     const socket = props.socket;
     socket.once("chatMessage", (msg) => {
-        console.log(`added ${msg.text} to message board`);
         addMessage(messages => [...messages, msg]);
         chatMessageContainer.current.scrollIntoView({ behavior: "smooth" });
-    });
-
-    socket.once('message', message => {
-        const msg = {text: message}
-        addMessage(messages => [...messages, msg]);
     });
 
     const displayMsg = messages.map((msg) => 

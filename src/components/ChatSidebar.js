@@ -6,7 +6,7 @@ function ChatSidebar(props)  {
     const [state, ] = useStore();
     const [users, setUsers] = useState([]);
 
-    socket.on("usersInRoom", (oUsers) => {
+    socket.once("usersInRoom", (oUsers) => {
         setUsers(oUsers);
     });
 

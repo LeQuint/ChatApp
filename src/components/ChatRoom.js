@@ -6,7 +6,8 @@ import { useEffect } from 'react';
 import socketIOClient from "socket.io-client";
 import { useStore } from './Store';
 
-const ENDPOINT = "http://localhost:3000/"
+//const ENDPOINT = "http://localhost:3000/"
+const ENDPOINT = "https://rocky-crag-78481.herokuapp.com/";
 
 function ChatRoom() {
     const socket = socketIOClient(ENDPOINT);
